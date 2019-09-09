@@ -1,0 +1,56 @@
+<% include partials/header %>
+
+<% include partials/nav %>
+<div class="container-fluid d-flex bg">
+    <div class="col-lg-6"></div>
+        <div class="col-lg-6">
+            <h1>
+                    <%= data["Title"] %>
+            </h1>
+            
+            <h5>
+               <%= data["Genre"] %>
+            </h5>
+
+            
+
+
+            <h4>
+                <strong>Director :</strong>    <%= data["Director"] %>
+            </h4>
+                
+        
+            
+    
+            
+            <p>
+                <strong>Plot :</strong><%= data["Plot"] %>
+            </p>
+
+
+            <div>
+                <strong>Released :</strong><%= data["Released"] %>
+           </div>
+            
+            <div>
+                <strong>Awards :</strong><%= data["Awards"] %>
+            </div>
+            
+            
+
+            <strong>Ratings :</strong>
+            <ul>
+                <% data["Ratings"].forEach(function(rate){ %>
+                    <li>
+                        <%= rate["Source"] %>
+                        <%= rate["Value"] %>
+        
+                    </li>        
+                <% }) %>
+            </ul>
+        </div>
+    
+</div>
+
+
+<% include partials/footer %>
