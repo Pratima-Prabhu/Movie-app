@@ -1,8 +1,30 @@
-<h1>
-	Search for a Movie;
-</h1>
+<% include partials/header %>
 
-<form action="/results" method="GET">
-	<input type="text" placeholder="search term" name="search">
-	<input type="submit">
-</form>
+<% include partials/nav %>
+<div class="container-fluid" id="search" >
+		
+	<div>
+		<h1>
+			Movie Search
+		</h1>
+
+	</div>
+	
+	<div>
+		<form action="/results" method="GET" class="form-group">
+			<!-- <input type="text" class="fa" placeholder="  &#xf002                         Enter Your Favourite Movie Name" name="search"> -->
+			<input  type="text" placeholder="                          Enter Your Favourite Movie Name" name="search" >
+			<div>
+				<input type="submit">
+			</div>
+			
+		</form>
+
+	</div>
+
+	
+
+</div>
+
+
+<% include partials/footer %>
