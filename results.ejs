@@ -1,16 +1,44 @@
-<h1>
-	Results!!
-</h1>
+<% include partials/header %>
 
-<ul>
-	<% data["Search"].forEach(function(movie){ %>
 
-		<li>
-			<em><%= movie["Title"] %></em> - <%= movie["Year"] %>
-		</li>
+<div class="container-fluid" id="results">
+	<div class="container">
+		<h1>
+				Moviezz..
+		</h1>
+
+
+		<div class="row ">
+			<% data["Search"].forEach(function(movie){ %>
+				<div class="col-md-3">
+					<div class="card-deck">
+							<div class="card" style="width: 18rem;">
+									<img src="<%= movie["Poster"] %>" class="card-img-top" alt="...">
+									<div class="card-body">
+									<h5 class="card-title "><%= movie["Title"] %></h5>
+									
+										<p>
+											<form action="/results/<%= movie.imdbID %>" method="GET">
+												<button class="btn btn-primary" type="submit" placeholder="id value" name="id" value="<%= movie["imdbID"] %>">More Info</button>
+											</form>
+										</p>
+									</div>
+							</div>
+					</div>
+				</div>
+			
+			<% }); %>
+		</div>
+		
+		
+				
+		
+				
+		<a href="/">Search Again?</a>
+
+	</div>
+		
+
 	
-	<% }) %>
-	
-</ul>
 
-<a href="/">Search Again?</a>
+<% include partials/footer %>
